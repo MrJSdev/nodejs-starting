@@ -8,13 +8,11 @@ if (err) {
 
 console.log('Connected to MongoDB Server');
 
-db.collection('StudentData').find({_id: 195}).toArray().then((docs)	=>	{
-console.log('StudentData:');
-console.log(JSON.stringify(docs, 'undefined', 2));
-}, (err)	=>	{
-console.log('Unable ot fetch the data', err);
+db.collection('StudentData').findOneAndDelete({
+	_id: 208,
+}).then((result)	=>	{
+console.log(result);
 });
-
 
 console.log('Another changes are made!');
 
